@@ -4,7 +4,7 @@
 //
 //  Created by Андрей on 28.03.17.
 //  Copyright © 2017 tingoit. All rights reserved.
-//
+// Это сделано на мак!
 
 import UIKit
 import Alamofire
