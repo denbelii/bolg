@@ -7,3 +7,16 @@
 //
 
 import Foundation
+import Alamofire
+import SwiftyJSON
+
+class ParseDataApi{
+    
+    static func parseErrorDefault(json: JSON, completionHandler: @escaping (_ json: JSON) -> Void){
+        
+        
+       
+    }
+    
+    
+}

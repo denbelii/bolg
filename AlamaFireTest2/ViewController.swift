@@ -8,45 +8,27 @@
 
 import UIKit
 import Alamofire
-
+import SwiftyJSON
 
 class ViewController: UIViewController {
     var sessionId: String?
     
+    @IBOutlet weak var activityIndLogin: UIActivityIndicatorView!
     
     @IBOutlet weak var labelS: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        //print("rrr = \(sessionId)")
-        
-        
     }
     
     @IBAction func goSecond(_ sender: Any) {
-        
-        BOFLogin(userName: userName, password: password).fetchTokenKey { (result) in
-            self.sessionId = result
-            DispatchQueue.main.async {
-                self.labelS.text = result
+        activityIndLogin.startAnimating()
+        BOFLogin(userName: userName, password: password).fetchTokenKey { (tokenKey) in
+            if let tokenKey = tokenKey{
+                self.labelS.text = tokenKey
             }
-//            print("okAC")
-//                let secondVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SecondVC") as! SecondVC
-//                
-//                secondVC.sessionId = result
-//                self.navigationController?.pushViewController(secondVC, animated: true)
-            
-            
+            self.activityIndLogin.stopAnimating()
         }
         
     }

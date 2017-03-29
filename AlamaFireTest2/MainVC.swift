@@ -8,6 +8,11 @@
 
 import UIKit
 
+var AUTH_TOKEN: String?{
+    return KeyChain.getToken()
+}
+let AUTH_TOKEN_KEY = "X-Token"
+
 class MainVC: UIViewController {
 
     override func viewDidLoad() {
@@ -31,5 +36,6 @@ class MainVC: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+
 
 }

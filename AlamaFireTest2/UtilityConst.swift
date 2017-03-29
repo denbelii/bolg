@@ -8,6 +8,7 @@
 
 import Foundation
 
-let urlMain = "https://www.bridge-of-love.com"
+let urlMain = "https://www.bridge-of-love.com/api"
+let urlPrefixMainPhoto = "https://www.bridge-of-love.com/"
 let userName = "alex572481@gmail.com"
 let password = "alex572481"

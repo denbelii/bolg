@@ -8,11 +8,11 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 class BOFLogin{
     
-    let loginUrl = urlMain + "/api/index.php?app=default&act=login"
-    
+    let loginUrl = urlMain + "/index.php?app=default&act=login"
     let userName: String
     let password: String
     var sessionId: String?
@@ -20,40 +20,38 @@ class BOFLogin{
         return ["user_name": self.userName, "password": self.password]
     }
     
-    
     init(userName: String, password: String) {
         self.userName = userName
         self.password = password
-        
     }
     
-    
-    func fetchTokenKey(completionHandler: @escaping (_ result: String?) -> Void) {
-        
-        Alamofire.request(self.loginUrl, method: .post, parameters: self.parameters)
-            .responseJSON{ (response) -> Void in
-                
-                
-                    if response.result.isSuccess{
-                        if let JSON = response.result.value,
-                            let JSONDict = JSON as? [String: AnyObject],
-                            let sessionIdDict = JSONDict["data"] as? [String: AnyObject],
-                            let sessionIdIn = sessionIdDict["session_id"] as? String{
-                            print("response.result.value = \(response.result.value)")
-                            completionHandler(sessionIdIn)
-                            //print("self.sessionId = \(self.sessionId)")
-                        }else{
-                            print("response.result.value = \(response.result.value)")
-                        }
-                        
+    func fetchTokenKey(completionHandler: @escaping (_ tokenKey: String?) -> Void) {
+        PostRequest.fetchData(url: loginUrl, parameters: parameters){ json in
+            if let code = json["code"].int{
+                switch code{
+                case 200:
+                    //ok
+                    if let tokenKey = json["data"]["session_id"].string{
+                        completionHandler(tokenKey)
                     }else{
-                        print("Error while fetching remote rooms: \(response.error.debugDescription)")
-                        return
+                        print("Error with tokenKey - nil!")
+                        completionHandler(nil)
                     }
-                
-                
-                
+                case 406:
+                    //not good
+                    if let message = json["message"].string{
+                        print(message)
+                    }
+                    completionHandler(nil)
+                default:
+                    print("Code unavailable")
+                    completionHandler(nil)
+                }
+            }else{
+                print("Code nil")
+                completionHandler(nil)
             }
         }
-        
+    }
+    
 }
