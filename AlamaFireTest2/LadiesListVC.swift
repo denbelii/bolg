@@ -65,10 +65,7 @@ extension LadiesListVC: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "listVCell", for: indexPath) as! listVCell
         cell.nameLabel.text = listProfile[indexPath.row]["name"].string
-        print("photo = \(listProfile[indexPath.row]["photo"].string)")
         
-        let imageData = NSData(contentsOf: URL(string: "https://www.bridge-of-love.com/data/files/images/lady/avatar/user_121887/small_201611091615168354.jpg")!)
-        cell.photoAvaImage.image = UIImage(data: imageData as! Data)
         cell.activityIndAva.startAnimating()
         cell.activityIndAva.isHidden = false
         if let path = listProfile[indexPath.row]["photo"].string{
