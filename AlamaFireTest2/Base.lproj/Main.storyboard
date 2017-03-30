@@ -485,7 +485,7 @@
         <scene sceneID="911-lw-eL5">
             <objects>
                 <navigationController id="9tA-gY-ctH" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" backIndicatorImage="BackIndicatorBlack" backIndicatorTransitionMaskImage="BackIndicatorBlack" id="ZwL-qh-7HD">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="ZwL-qh-7HD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.46274509800000002" green="0.75686274509999996" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -647,7 +647,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qz6-v1-olK">
                                 <rect key="frame" x="0.0" y="64" width="375" height="48"/>
                                 <subviews>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="PNA-0g-emD" customClass="SegmentedControlGreenStyle">
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="PNA-0g-emD">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                                         <color key="backgroundColor" red="0.46274509800000002" green="0.75686274509999996" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <segments>
@@ -667,9 +667,8 @@
                                     <constraint firstAttribute="height" constant="48" id="t9g-pG-Uvn"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wKL-Ql-bMM">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wKL-Ql-bMM">
                                 <rect key="frame" x="0.0" y="120" width="375" height="547"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Q0J-T5-jVG">
                                     <size key="itemSize" width="160" height="260"/>
@@ -942,10 +941,14 @@
                         <color key="backgroundColor" red="0.46274509800000002" green="0.75686274509999996" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="7rd-8j-uPP" firstAttribute="leading" secondItem="K2H-6Q-Slc" secondAttribute="leading" id="6hh-BN-2cK"/>
+                            <constraint firstItem="JEs-YX-NCO" firstAttribute="top" secondItem="wKL-Ql-bMM" secondAttribute="bottom" id="9rA-36-XkV"/>
+                            <constraint firstAttribute="trailing" secondItem="wKL-Ql-bMM" secondAttribute="trailing" id="DJw-PH-BnU"/>
+                            <constraint firstItem="wKL-Ql-bMM" firstAttribute="top" secondItem="qz6-v1-olK" secondAttribute="bottom" constant="8" id="MN8-LE-p09"/>
                             <constraint firstItem="7rd-8j-uPP" firstAttribute="top" secondItem="zXF-lV-qig" secondAttribute="bottom" id="S1b-pa-yJr"/>
                             <constraint firstAttribute="trailing" secondItem="7rd-8j-uPP" secondAttribute="trailing" id="Xyk-0P-D7F"/>
                             <constraint firstItem="qz6-v1-olK" firstAttribute="top" secondItem="7rd-8j-uPP" secondAttribute="bottom" id="bZP-hM-lq5"/>
                             <constraint firstAttribute="trailing" secondItem="qz6-v1-olK" secondAttribute="trailing" id="hNN-M1-qh8"/>
+                            <constraint firstItem="wKL-Ql-bMM" firstAttribute="leading" secondItem="K2H-6Q-Slc" secondAttribute="leading" id="hg4-gz-Gb2"/>
                             <constraint firstItem="qz6-v1-olK" firstAttribute="leading" secondItem="K2H-6Q-Slc" secondAttribute="leading" id="xR6-MC-W6L"/>
                         </constraints>
                     </view>
@@ -969,7 +972,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="BackIndicatorBlack" width="24" height="24"/>
         <image name="BoL-Mobile-UI" width="1500" height="980"/>
         <image name="CameraLarge" width="36" height="36"/>
         <image name="FavoriteColor" width="16" height="14"/>

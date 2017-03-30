@@ -5,26 +5,20 @@
 //  Created by Nataliia Klemenchenko on 29.03.17.
 //  Copyright © 2017 tingoit. All rights reserved.
 //
-
+//
 import Foundation
 import Alamofire
 import SwiftyJSON
 
-class ListOnline{
+class GetOnlineList{
     
     let url = urlMain + "/index.php?app=ajax&act=get_online_list"
-    var headers: HTTPHeaders {
-        if let AUTH_TOKEN = AUTH_TOKEN{
-        return [AUTH_TOKEN_KEY : AUTH_TOKEN]
-        }
-        print("AUTH_TOKEN_KEY is nil")
-        return [AUTH_TOKEN_KEY : "Error"]
-    }
     
     
     
     func fetchOnlineList(completionHandler: @escaping (_ listProfile: [JSON]?) -> Void) {
-        PostRequest.fetchData(url: url, headers: headers) { (json) in
+        let parametrs:Parameters = [:]
+        PostRequest.fetchData(url: url, parameters: parametrs, headers: headers) { (json) in
             //print(json[].arrayValue.index(of: "type"))
            var listProfile:[JSON]?
             for item in json[].arrayValue {

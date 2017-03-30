@@ -8,9 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		0C0E86AD1E8C53490083807D /* listVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0E86AC1E8C53490083807D /* listVCell.swift */; };
+		0C0E86AF1E8D24720083807D /* Profie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0E86AE1E8D24720083807D /* Profie.swift */; };
+		0C0E86B61E8D4B1E0083807D /* LadiesFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0E86B51E8D4B1E0083807D /* LadiesFilters.swift */; };
+		0C0E86B81E8D580B0083807D /* Lady.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0E86B71E8D580B0083807D /* Lady.swift */; };
 		0C2FE46D1E8BFFAE00324A2D /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2FE46C1E8BFFAE00324A2D /* KeyChain.swift */; };
 		0C2FE46F1E8C1E9600324A2D /* GetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2FE46E1E8C1E9600324A2D /* GetRequest.swift */; };
-		0C2FE4711E8C21AC00324A2D /* ListOnline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2FE4701E8C21AC00324A2D /* ListOnline.swift */; };
+		0C2FE4711E8C21AC00324A2D /* GetOnlineList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2FE4701E8C21AC00324A2D /* GetOnlineList.swift */; };
 		0C2FE4731E8C224600324A2D /* ParseDataApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2FE4721E8C224600324A2D /* ParseDataApi.swift */; };
 		0CCD4FD61E8BEA3A00678F91 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCD4FD51E8BEA3A00678F91 /* MainVC.swift */; };
 		0CCD4FD81E8BF05A00678F91 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCD4FD71E8BF05A00678F91 /* LoginVC.swift */; };
@@ -34,9 +37,12 @@
 
 /* Begin PBXFileReference section */
 		0C0E86AC1E8C53490083807D /* listVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = listVCell.swift; sourceTree = "<group>"; };
+		0C0E86AE1E8D24720083807D /* Profie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profie.swift; sourceTree = "<group>"; };
+		0C0E86B51E8D4B1E0083807D /* LadiesFilters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LadiesFilters.swift; sourceTree = "<group>"; };
+		0C0E86B71E8D580B0083807D /* Lady.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lady.swift; sourceTree = "<group>"; };
 		0C2FE46C1E8BFFAE00324A2D /* KeyChain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
 		0C2FE46E1E8C1E9600324A2D /* GetRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetRequest.swift; sourceTree = "<group>"; };
-		0C2FE4701E8C21AC00324A2D /* ListOnline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOnline.swift; sourceTree = "<group>"; };
+		0C2FE4701E8C21AC00324A2D /* GetOnlineList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetOnlineList.swift; sourceTree = "<group>"; };
 		0C2FE4721E8C224600324A2D /* ParseDataApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseDataApi.swift; sourceTree = "<group>"; };
 		0C8A86C1384AFD874C3A4B82 /* Pods-AlamaFireTest2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlamaFireTest2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlamaFireTest2/Pods-AlamaFireTest2.debug.xcconfig"; sourceTree = "<group>"; };
 		0CCD4FD51E8BEA3A00678F91 /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -74,6 +80,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C0E86B01E8D248B0083807D /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				0CCD4FD71E8BF05A00678F91 /* LoginVC.swift */,
+				77D020751E8ABD9100A673A9 /* BOFLogin.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		0C0E86B11E8D24960083807D /* List */ = {
+			isa = PBXGroup;
+			children = (
+				0CCD4FDB1E8BF47C00678F91 /* LadiesListVC.swift */,
+				0C0E86B51E8D4B1E0083807D /* LadiesFilters.swift */,
+				0C2FE4701E8C21AC00324A2D /* GetOnlineList.swift */,
+				0C0E86AC1E8C53490083807D /* listVCell.swift */,
+			);
+			name = List;
+			sourceTree = "<group>";
+		};
+		0C0E86B21E8D24A90083807D /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				0C2FE46E1E8C1E9600324A2D /* GetRequest.swift */,
+				77C5421B1E8BB9B300EF543D /* PostRequest.swift */,
+				0C2FE4721E8C224600324A2D /* ParseDataApi.swift */,
+			);
+			name = Request;
+			sourceTree = "<group>";
+		};
+		0C0E86B31E8D27FE0083807D /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				0C2FE46C1E8BFFAE00324A2D /* KeyChain.swift */,
+				77D020731E8ABD1000A673A9 /* UtilityConst.swift */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
+		0C0E86B41E8D28220083807D /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				0C0E86AE1E8D24720083807D /* Profie.swift */,
+				0C0E86B71E8D580B0083807D /* Lady.swift */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
 		74782069F8343E5BCAD02550 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,22 +161,17 @@
 			isa = PBXGroup;
 			children = (
 				0CCD4FD51E8BEA3A00678F91 /* MainVC.swift */,
-				0CCD4FD71E8BF05A00678F91 /* LoginVC.swift */,
-				77D020751E8ABD9100A673A9 /* BOFLogin.swift */,
-				0CCD4FDB1E8BF47C00678F91 /* LadiesListVC.swift */,
-				0C2FE4701E8C21AC00324A2D /* ListOnline.swift */,
+				0C0E86B41E8D28220083807D /* Profile */,
+				0C0E86B01E8D248B0083807D /* Login */,
+				0C0E86B11E8D24960083807D /* List */,
+				0C0E86B21E8D24A90083807D /* Request */,
+				0C0E86B31E8D27FE0083807D /* Utility */,
 				772F72B41E8AB1D100467844 /* AppDelegate.swift */,
-				0C2FE46E1E8C1E9600324A2D /* GetRequest.swift */,
-				77C5421B1E8BB9B300EF543D /* PostRequest.swift */,
-				0C2FE4721E8C224600324A2D /* ParseDataApi.swift */,
 				772F72B81E8AB1D100467844 /* Main.storyboard */,
 				772F72BE1E8AB1D100467844 /* Assets.xcassets */,
 				772F72C01E8AB1D100467844 /* LaunchScreen.storyboard */,
 				772F72C31E8AB1D100467844 /* Info.plist */,
 				772F72BB1E8AB1D100467844 /* AlamaFireTest2.xcdatamodeld */,
-				0C2FE46C1E8BFFAE00324A2D /* KeyChain.swift */,
-				77D020731E8ABD1000A673A9 /* UtilityConst.swift */,
-				0C0E86AC1E8C53490083807D /* listVCell.swift */,
 			);
 			path = AlamaFireTest2;
 			sourceTree = "<group>";
@@ -274,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0CCD4FD81E8BF05A00678F91 /* LoginVC.swift in Sources */,
+				0C0E86B61E8D4B1E0083807D /* LadiesFilters.swift in Sources */,
 				77D020781E8AD02100A673A9 /* APIManager.swift in Sources */,
 				0CCD4FD61E8BEA3A00678F91 /* MainVC.swift in Sources */,
 				77D020761E8ABD9100A673A9 /* BOFLogin.swift in Sources */,
@@ -287,8 +337,10 @@
 				77C5421A1E8AF18B00EF543D /* SecondVC.swift in Sources */,
 				77C5421C1E8BB9B300EF543D /* PostRequest.swift in Sources */,
 				0C2FE4731E8C224600324A2D /* ParseDataApi.swift in Sources */,
+				0C0E86B81E8D580B0083807D /* Lady.swift in Sources */,
 				772F72B51E8AB1D100467844 /* AppDelegate.swift in Sources */,
-				0C2FE4711E8C21AC00324A2D /* ListOnline.swift in Sources */,
+				0C2FE4711E8C21AC00324A2D /* GetOnlineList.swift in Sources */,
+				0C0E86AF1E8D24720083807D /* Profie.swift in Sources */,
 				0C2FE46D1E8BFFAE00324A2D /* KeyChain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

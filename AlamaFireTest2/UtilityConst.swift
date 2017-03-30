@@ -7,8 +7,17 @@
 //
 
 import Foundation
+import Alamofire
 
 let urlMain = "https://www.bridge-of-love.com/api"
 let urlPrefixMainPhoto = "https://www.bridge-of-love.com/"
 let userName = "alex572481@gmail.com"
 let password = "alex572481"
+
+var headers: HTTPHeaders {
+    if let AUTH_TOKEN = AUTH_TOKEN{
+        return [AUTH_TOKEN_KEY : AUTH_TOKEN]
+    }
+    print("AUTH_TOKEN_KEY is nil")
+    return [AUTH_TOKEN_KEY : "Error"]
+}
