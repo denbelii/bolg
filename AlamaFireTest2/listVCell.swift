@@ -15,4 +15,9 @@ class listVCell: UICollectionViewCell {
     @IBOutlet weak var idLabel: UILabel!
     
     @IBOutlet weak var activityIndAva: UIActivityIndicatorView!
+    
+    override func prepareForReuse() {
+        self.photoAvaImage.image = UIImage(named: "IconGirl")
+        //print("prepareForReuse")
+    }
 }

@@ -9,20 +9,20 @@
 import UIKit
 import SwiftyJSON
 
-class LadiesListVC: UIViewController {
+class LadiesListVC: UIViewController, UICollectionViewDelegate {
     
     @IBOutlet weak var listCollectionView: UICollectionView!
     
     @IBOutlet weak var activityIdenCollection: UIActivityIndicatorView!
     var arrayLady:[Lady] = []
-    var pageNumber: Int32 = 1
+    var pageNumber: Int32 = 0
     
     override func viewDidLoad() {
         activityIdenCollection.isHidden = false
         activityIdenCollection.startAnimating()
         super.viewDidLoad()
         let tokenKey = KeyChain.getToken()
-        print("tokenKey = \(tokenKey)")
+        //print("tokenKey = \(tokenKey)")
         guard tokenKey != nil else {
             goLogin()
             return
@@ -60,7 +60,10 @@ extension LadiesListVC: UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.row == arrayLady.count - 1{
+            print("-1")
             loadMore()
+            //listCollectionView.reloadData()
+            //print(pageNumber)
         }
         
         
@@ -70,16 +73,19 @@ extension LadiesListVC: UICollectionViewDataSource{
         cell.activityIndAva.startAnimating()
         cell.activityIndAva.isHidden = false
         cell.idLabel.text = lady.id?.description
-        
-        
+        //print("lady.id = \(lady.id)")
+        //print("lady.avatarURL = \(lady.avatarURL)")
         if let url = lady.avatarURL{
-            DispatchQueue.global(qos: .default).async {
+            DispatchQueue.global(qos: .userInitiated).async {
                 let imageData = NSData(contentsOf: url)
+                
                 DispatchQueue.main.async {
                     if imageData != nil{
                         cell.photoAvaImage.image = UIImage(data: imageData as! Data)
+                        //print("url = \(url)")
                         cell.activityIndAva.stopAnimating()
                         cell.activityIndAva.isHidden = true
+                        print("pageNumber = \(self.pageNumber)")
                     }
                 }
                 
@@ -90,12 +96,16 @@ extension LadiesListVC: UICollectionViewDataSource{
         return cell
     }
     
+    
+    
+    
+    
 }
 
 extension LadiesListVC{
     func loadMore(){
         updateArrayLady()
-        listCollectionView.reloadData()
+        //listCollectionView.reloadData()
     }
     
     func updateArrayLady(){
@@ -103,12 +113,15 @@ extension LadiesListVC{
             LadiesFilters().fetchOnlineList(page: self.pageNumber, completionHandler: { (arrayLady) in
                 if let arrayLady = arrayLady{
                     self.arrayLady += arrayLady
-                    print("count = \(arrayLady.count)")
+                    print("arrayLady gotov")
                     DispatchQueue.main.async {
+                        
                         self.listCollectionView.reloadData()
+                        print("reload data")
                         self.activityIdenCollection.stopAnimating()
                         self.activityIdenCollection.isHidden = true
                     }
+                    
                     self.pageNumber += 1
                 }
                 

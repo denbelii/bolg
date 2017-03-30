@@ -15,7 +15,7 @@ final class KeyChain{
     static func setToken(tokenKey: String){
         let saveSuccessful: Bool = KeychainWrapper.standard.set(tokenKey, forKey: tokenKeyIdentifier)
         if saveSuccessful{
-            print("tokenKey record")
+            //print("tokenKey record")
         }
     }
     

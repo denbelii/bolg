@@ -15,6 +15,7 @@ class PostRequest {
     class func fetchData(url: String, parameters: Parameters = [:],  headers: HTTPHeaders = [:],completionHandler: @escaping (_ json: JSON) -> Void){
         Alamofire.request(url, method: .post, parameters: parameters, headers: headers)
             .responseJSON{ (response) -> Void in
+                //print("response = \(response)")
                 if response.result.isSuccess{
                     if let data = response.data{
                         completionHandler(JSON(data: data))
@@ -27,6 +28,7 @@ class PostRequest {
                     return
                 }
         }
+        //print("req = \(req)")
     }
     
 }

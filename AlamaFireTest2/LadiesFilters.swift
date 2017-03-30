@@ -22,6 +22,7 @@ class LadiesFilters{
         let parameters = [pageIdentificator: page]
         PostRequest.fetchData(url: url, parameters: parameters, headers: headers) { (json) in
             let dictionaryJSON = json.dictionary?["data"]?["list"].dictionaryValue
+            //print("dictionaryJSON = \(dictionaryJSON)")
             var arrayLady = [Lady]()
             if let dictionaryJSON = dictionaryJSON{
                 for item in dictionaryJSON{
@@ -29,6 +30,7 @@ class LadiesFilters{
                     arrayLady.append(lady)
                 }
             }
+            print("completionHandler")
             completionHandler(arrayLady)
         }
     }

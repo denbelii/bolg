@@ -19,13 +19,13 @@ class GetRequest {
             ]
             print("AUTH_TOKEN_KEY = \(AUTH_TOKEN_KEY)")
             let req = Alamofire.request(url, method: .get, headers: headers).responseJSON { response in
-                print("response.data = \(response.data)")
+                //print("response.data = \(response.data)")
                 if response.result.isSuccess{
                     if let data = response.data{
                         completionHandler(JSON(data: data))
-                        print("data = \(JSON(data: data))")
+                        //print("data = \(JSON(data: data))")
                     } else{
-                        print("что то с данными для джейсон")
+                    print("что то с данными для джейсон")
                     }
                 }else{
                     print("Error while fetching: \(response.error.debugDescription)")
